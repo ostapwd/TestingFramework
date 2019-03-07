@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace TestingFramework
+namespace TestingFramework.Tools
 {
     static class Wait
     {

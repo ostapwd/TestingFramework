@@ -46,7 +46,7 @@ namespace TestingFramework.Tests
         /// Gets path to project base root from environment where tests are run.
         /// </summary>
         /// <returns>Path to project base root.</returns>
-        private static string GetRootDir()
+        public static string GetRootDir()
         {
             var uri = new UriBuilder(Assembly.GetExecutingAssembly().CodeBase);
 

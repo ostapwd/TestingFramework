@@ -11,6 +11,7 @@ namespace TestingFramework.Tests
         [Test, Order(1)]
         public void Test1()
         {
+            Console.WriteLine(BaseTest.GetRootDir());
             Console.WriteLine("Running Test1");
         }
 

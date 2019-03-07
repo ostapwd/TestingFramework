@@ -1,4 +1,5 @@
 ﻿using SeleniumExtras.PageObjects;
+using TestingFramework.Tools;
 
 namespace TestingFramework.Pages
 {
