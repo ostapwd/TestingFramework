@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using System.IO;
 using NUnit.Framework;
+using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
@@ -12,7 +11,7 @@ namespace TestingFramework.Tests
 
         [OneTimeSetUp]
         public void BaseTestPrepareTestFixture()
-        { 
+        {
             logs += "BaseTestOneTimeSetUp\n";
             // StartBrowser();
 
@@ -27,34 +26,7 @@ namespace TestingFramework.Tests
         {
             logs += "BaseTestOneTimeTearDown\n";
 
-            WriteToFile(logs);
-            //  StartPage startPage = new StartPage();
-            //  startPage.OpenLoginPage();
-            //  LoginPage loginPOage = new LoginPage();
-
-
-
-        }
-
-        public void WriteToFile(string textToWrite)
-        {
-            string path = GetRootDir() + "\\logs.txt";
-            File.WriteAllText(path, textToWrite);
-        }
-
-        /// <summary>
-        /// Gets path to project base root from environment where tests are run.
-        /// </summary>
-        /// <returns>Path to project base root.</returns>
-        public static string GetRootDir()
-        {
-            var uri = new UriBuilder(Assembly.GetExecutingAssembly().CodeBase);
-
-            var path = Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path))
-                .Replace("\\TestingFramework\\bin\\Debug", "")
-                .Replace("/TestingFramework/bin/Debug", "");
-
-            return path;
+            Config.WriteLogs(logs);
         }
     }
 }

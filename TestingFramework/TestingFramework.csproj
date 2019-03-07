@@ -75,6 +75,7 @@
     <Compile Include="Tests\Class1.cs" />
     <Compile Include="Tests\LoginPageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Config.cs" />
     <Compile Include="Tools\Wait.cs" />
   </ItemGroup>
   <ItemGroup>
