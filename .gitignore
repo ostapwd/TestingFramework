@@ -7,3 +7,4 @@ TestingFramework/bin/
 TestingFramework/obj/**
 TestingFramework/bin/**
 *.user
+logs.txt
