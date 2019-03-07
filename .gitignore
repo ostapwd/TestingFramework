@@ -6,3 +6,4 @@ TestingFramework/obj/
 TestingFramework/bin/
 TestingFramework/obj/**
 TestingFramework/bin/**
+*.user
