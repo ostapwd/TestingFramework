@@ -51,7 +51,8 @@ namespace TestingFramework.Tests
             var uri = new UriBuilder(Assembly.GetExecutingAssembly().CodeBase);
 
             var path = Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path))
-                .Replace("\\TestingFramework\\bin\\Debug", "");
+                .Replace("\\TestingFramework\\bin\\Debug", "")
+                .Replace("/TestingFramework/bin/Debug", "");
 
             return path;
         }
