@@ -2,3 +2,7 @@
 packages/**
 bin/**
 obj/**
+TestingFramework/obj/
+TestingFramework/bin/
+TestingFramework/obj/**
+TestingFramework/bin/**
