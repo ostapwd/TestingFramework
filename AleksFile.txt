@@ -1,6 +1,0 @@
-This is textfile for coding imitation.
-Git will track all changes in it.
-
-Let's change it somehow.
-
-Here is some text now, before the file was just created, it was empty.
