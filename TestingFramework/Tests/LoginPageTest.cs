@@ -1,8 +1,7 @@
 ﻿using System;
-using System.IO;
 using NUnit.Framework;
 
-namespace TestingFramework
+namespace TestingFramework.Tests
 {
     [TestFixture(Author = "Ostap", Description = "This test do...")]
     [Parallelizable(ParallelScope.Fixtures)]

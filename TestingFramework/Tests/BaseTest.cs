@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using NUnit.Framework;
 
-namespace TestingFramework
+namespace TestingFramework.Tests
 {
     class BaseTest
     {

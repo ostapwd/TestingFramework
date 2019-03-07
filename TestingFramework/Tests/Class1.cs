@@ -1,9 +1,7 @@
 ﻿using System;
-using System.IO;
-using System.Reflection;
 using NUnit.Framework;
 
-namespace TestingFramework
+namespace TestingFramework.Tests
 {
     [TestFixture]
     public class Class1
