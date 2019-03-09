@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="15" result="Failed" total="15" passed="12" failed="3" inconclusive="0" skipped="0" asserts="9" engine-version="3.9.0.0" clr-version="4.0.30319.42000" start-time="2019-03-09 09:24:41Z" end-time="2019-03-09 09:24:53Z" duration="11.644348">
+  <command-line><![CDATA[nunit3-console.exe  C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\bin\Debug\TestingFramework.dll]]></command-line>
+  <test-suite type="Assembly" id="0-1021" name="TestingFramework.dll" fullname="TestingFramework.dll" runstate="Runnable" testcasecount="15" result="Failed" site="Child" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:53Z" duration="11.098627" total="15" passed="12" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="9">
+    <environment framework-version="3.11.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.17763.0" platform="Win32NT" cwd="C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\Resources\NUnit.Console-3.9.0" machine-name="DESKTOP-FA2Q7JQ" user="OstapVoitsekhovskyi" user-domain="AzureAD" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\Resources\NUnit.Console-3.9.0" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.6.1" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="8" />
+    </settings>
+    <properties>
+      <property name="_PID" value="22936" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="0-1022" name="TestingFramework" fullname="TestingFramework" runstate="Runnable" testcasecount="15" result="Failed" site="Child" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:53Z" duration="11.081046" total="15" passed="12" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="9">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="0-1023" name="Tests" fullname="TestingFramework.Tests" runstate="Runnable" testcasecount="15" result="Failed" site="Child" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:53Z" duration="11.080488" total="15" passed="12" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="9">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="0-1002" name="Class1" fullname="TestingFramework.Tests.Class1" classname="TestingFramework.Tests.Class1" runstate="Runnable" testcasecount="11" result="Failed" site="Child" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.171065" total="11" passed="9" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="7">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="0-1003" name="Test1" fullname="TestingFramework.Tests.Class1.Test1" methodname="Test1" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1409593426" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.041909" asserts="0">
+            <properties>
+              <property name="Order" value="1" />
+            </properties>
+            <output><![CDATA[C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework
+Running Test1
+]]></output>
+          </test-case>
+          <test-suite type="ParameterizedMethod" id="0-1009" name="TestAddFunction" fullname="TestingFramework.Tests.Class1.TestAddFunction" classname="TestingFramework.Tests.Class1" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.115025" total="4" passed="3" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="4">
+            <properties>
+              <property name="Order" value="2" />
+            </properties>
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="0-1005" name="TestAddFunction(10,20,30)" fullname="TestingFramework.Tests.Class1.TestAddFunction(10,20,30)" methodname="TestAddFunction" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1184888611" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.019353" asserts="1" />
+            <test-case id="0-1006" name="TestAddFunction(1,5,6)" fullname="TestingFramework.Tests.Class1.TestAddFunction(1,5,6)" methodname="TestAddFunction" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="497608106" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000254" asserts="1" />
+            <test-case id="0-1007" name="TestAddFunction(50,60,100)" fullname="TestingFramework.Tests.Class1.TestAddFunction(50,60,100)" methodname="TestAddFunction" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1799507662" result="Failed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.092504" asserts="1">
+              <failure>
+                <message><![CDATA[  Wrong result
+  Expected: 100
+  But was:  110
+]]></message>
+                <stack-trace><![CDATA[   at TestingFramework.Tests.Class1.TestAddFunction(Int32 a, Int32 b, Int32 result) in C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\Tests\Class1.cs:line 31
+]]></stack-trace>
+              </failure>
+              <assertions>
+                <assertion result="Failed">
+                  <message><![CDATA[  Wrong result
+  Expected: 100
+  But was:  110
+]]></message>
+                  <stack-trace><![CDATA[   at TestingFramework.Tests.Class1.TestAddFunction(Int32 a, Int32 b, Int32 result) in C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\Tests\Class1.cs:line 31
+]]></stack-trace>
+                </assertion>
+              </assertions>
+            </test-case>
+            <test-case id="0-1008" name="TestAddFunction(6,9,15)" fullname="TestingFramework.Tests.Class1.TestAddFunction(6,9,15)" methodname="TestAddFunction" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1594001695" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000142" asserts="1" />
+          </test-suite>
+          <test-case id="0-1004" name="Test2" fullname="TestingFramework.Tests.Class1.Test2" methodname="Test2" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="929269218" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.001075" asserts="1">
+            <properties>
+              <property name="Order" value="5" />
+            </properties>
+            <output><![CDATA[Running Test2
+]]></output>
+          </test-case>
+          <test-suite type="ParameterizedMethod" id="0-1012" name="TestSomth" fullname="TestingFramework.Tests.Class1.TestSomth" classname="TestingFramework.Tests.Class1" runstate="Runnable" testcasecount="2" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000256" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+            <properties>
+              <property name="Order" value="22" />
+            </properties>
+            <test-case id="0-1010" name="TestSomth(10,20,&quot;rrr&quot;)" fullname="TestingFramework.Tests.Class1.TestSomth(10,20,&quot;rrr&quot;)" methodname="TestSomth" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="734706206" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000184" asserts="0">
+              <output><![CDATA[10 20 rrr
+]]></output>
+            </test-case>
+            <test-case id="0-1011" name="TestSomth(1,5,&quot;qqqq&quot;)" fullname="TestingFramework.Tests.Class1.TestSomth(1,5,&quot;qqqq&quot;)" methodname="TestSomth" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="2033739630" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000034" asserts="0">
+              <output><![CDATA[1 5 qqqq
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-case id="0-1016" name="Test57" fullname="TestingFramework.Tests.Class1.Test57" methodname="Test57" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1863841133" result="Failed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.001634" asserts="2">
+            <properties>
+              <property name="Order" value="57" />
+            </properties>
+            <failure>
+              <message><![CDATA[  9 should be more than 9
+  Expected: True
+  But was:  False
+]]></message>
+              <stack-trace><![CDATA[   at TestingFramework.Tests.Class1.Test57() in C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\Tests\Class1.cs:line 77
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[Running Test57 stage 1
+Running Test57 stage 2
+]]></output>
+            <assertions>
+              <assertion result="Failed">
+                <message><![CDATA[  9 should be more than 9
+  Expected: True
+  But was:  False
+]]></message>
+                <stack-trace><![CDATA[   at TestingFramework.Tests.Class1.Test57() in C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\Tests\Class1.cs:line 77
+]]></stack-trace>
+              </assertion>
+            </assertions>
+          </test-case>
+          <test-suite type="ParameterizedMethod" id="0-1015" name="TestDD" fullname="TestingFramework.Tests.Class1.TestDD" classname="TestingFramework.Tests.Class1" runstate="Runnable" testcasecount="2" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000370" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+            <test-case id="0-1013" name="TestDD(4,3,&quot;Hi&quot;)" fullname="TestingFramework.Tests.Class1.TestDD(4,3,&quot;Hi&quot;)" methodname="TestDD" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1389131343" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000280" asserts="0">
+              <output><![CDATA[4 3 Hi
+]]></output>
+            </test-case>
+            <test-case id="0-1014" name="TestDD(9,10,&quot;Hi1&quot;)" fullname="TestingFramework.Tests.Class1.TestDD(9,10,&quot;Hi1&quot;)" methodname="TestDD" classname="TestingFramework.Tests.Class1" runstate="Runnable" seed="1598589251" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000042" asserts="0">
+              <output><![CDATA[9 10 Hi1
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestFixture" id="0-1017" name="LoginPageTest" fullname="TestingFramework.Tests.LoginPageTest" classname="TestingFramework.Tests.LoginPageTest" runstate="Runnable" testcasecount="3" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.010275" total="3" passed="3" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Author" value="Ostap" />
+            <property name="Description" value="This test do..." />
+            <property name="ParallelScope" value="Self, Fixtures" />
+          </properties>
+          <test-case id="0-1018" name="TestUsernameInput" fullname="TestingFramework.Tests.LoginPageTest.TestUsernameInput" methodname="TestUsernameInput" classname="TestingFramework.Tests.LoginPageTest" runstate="Runnable" seed="1173490104" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.004118" asserts="0">
+            <properties>
+              <property name="Order" value="1" />
+            </properties>
+            <output><![CDATA[hello
+17
+dddd
+dddd iiii 
+]]></output>
+          </test-case>
+          <test-case id="0-1019" name="TestPasswordInput" fullname="TestingFramework.Tests.LoginPageTest.TestPasswordInput" methodname="TestPasswordInput" classname="TestingFramework.Tests.LoginPageTest" runstate="Runnable" seed="532849875" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000170" asserts="0">
+            <properties>
+              <property name="Order" value="2" />
+            </properties>
+          </test-case>
+          <test-case id="0-1020" name="TestLoginButton" fullname="TestingFramework.Tests.LoginPageTest.TestLoginButton" methodname="TestLoginButton" classname="TestingFramework.Tests.LoginPageTest" runstate="Runnable" seed="1527747618" result="Passed" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:42Z" duration="0.000109" asserts="0">
+            <properties>
+              <property name="Order" value="3" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="0-1000" name="LoginNegativeTest" fullname="TestingFramework.Tests.LoginNegativeTest" classname="TestingFramework.Tests.LoginNegativeTest" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2019-03-09 09:24:42Z" end-time="2019-03-09 09:24:53Z" duration="10.889950" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="2">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="0-1001" name="NegativeLoginTest" fullname="TestingFramework.Tests.LoginNegativeTest.NegativeLoginTest" methodname="NegativeLoginTest" classname="TestingFramework.Tests.LoginNegativeTest" runstate="Runnable" seed="400596393" result="Failed" start-time="2019-03-09 09:24:51Z" end-time="2019-03-09 09:24:53Z" duration="1.969230" asserts="2">
+            <failure>
+              <message><![CDATA[  String lengths are both 25. Strings differ at index 24.
+  Expected: "Oops, that's not a match!"
+  But was:  "Oops, that's not a match."
+  -----------------------------------^
+]]></message>
+              <stack-trace><![CDATA[   at TestingFramework.Tests.LoginNegativeTest.NegativeLoginTest() in C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\Tests\LoginNegativeTest.cs:line 34
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[check if element is shown
+]]></output>
+            <assertions>
+              <assertion result="Failed">
+                <message><![CDATA[  String lengths are both 25. Strings differ at index 24.
+  Expected: "Oops, that's not a match!"
+  But was:  "Oops, that's not a match."
+  -----------------------------------^
+]]></message>
+                <stack-trace><![CDATA[   at TestingFramework.Tests.LoginNegativeTest.NegativeLoginTest() in C:\Users\OstapVoitsekhovskyi\source\repos\TestingFramework\TestingFramework\Tests\LoginNegativeTest.cs:line 34
+]]></stack-trace>
+              </assertion>
+            </assertions>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

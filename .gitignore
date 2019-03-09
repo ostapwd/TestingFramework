@@ -8,3 +8,5 @@ TestingFramework/obj/**
 TestingFramework/bin/**
 *.user
 logs.txt
+TestingFramework/Report/*
+TestingFramework/Report/**
