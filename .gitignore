@@ -10,3 +10,4 @@ TestingFramework/bin/**
 logs.txt
 Report/*
 Report/**
+Resources/NUnit.Console-3.9.0/TestResult.xml
