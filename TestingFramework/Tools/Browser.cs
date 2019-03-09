@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Runtime.CompilerServices;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace TestingFramework.Tools
@@ -23,6 +24,11 @@ namespace TestingFramework.Tools
             }
 
             return _driver;
+        }
+
+        public static bool IsDriverStarted()
+        {
+            return _driver != null;
         }
 
         public static void OpenStartPage()

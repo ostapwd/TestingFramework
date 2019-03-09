@@ -19,6 +19,7 @@ namespace TestingFramework.Tests
             startPage.OpenLoginPage();
 
             _loginPage = new LoginPage();
+            Screenshot.Take("Screen1.jpg");
         }
 
         [Test]
@@ -29,6 +30,8 @@ namespace TestingFramework.Tests
 
             bool isElementShown = loginPageNegative.IsErrorLabelShown();
             string elementInnerText = loginPageNegative.GetErrorLabelText();
+
+            Screenshot.Take("Screen2.jpg");
 
             Assert.IsTrue(isElementShown, "Error message should be shown!");
             Assert.AreEqual( "Oops, that's not a match!", elementInnerText);
