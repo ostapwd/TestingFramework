@@ -15,22 +15,25 @@ namespace TestingFramework.Tests
         public void BaseTestPrepareTestFixture()
         {
             logs += "BaseTestOneTimeSetUp\n";
-            // StartBrowser();
-
-            //  StartPage startPage = new StartPage();
-            //  startPage.OpenLoginPage();
-            //  LoginPage loginPOage = new LoginPage();
-
         }
 
         [TearDown]
         public void TakeScreenIfFailed()
         {
-            var res = TestContext.CurrentContext.Result.Outcome;
-            if (res.Equals(ResultState.Failure) || res.Equals(ResultState.Error))
+            logs += "\t\tBaseTestTearDown\n";
+            var currentTestResult = TestContext.CurrentContext.Result.Outcome;
+            if (currentTestResult.Equals(ResultState.Failure) ||
+                currentTestResult.Equals(ResultState.Error))
             {
                 ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromBrowser());
             }
+        }
+
+        [SetUp]
+        public void PrepareEachTest()
+        {
+            // do somth before every test
+            logs += "\t\tBaseTestSetUp\n";
         }
 
         [OneTimeTearDown]
@@ -38,7 +41,7 @@ namespace TestingFramework.Tests
         {
             logs += "BaseTestOneTimeTearDown\n";
 
-            //Config.WriteLogs(logs);
+            Config.WriteLogs(logs);
         }
     }
 }

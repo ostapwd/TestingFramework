@@ -1,5 +1,7 @@
 ﻿using System;
+using Ghpr.NUnit.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using TestingFramework.Pages;
 using TestingFramework.Tools;
 
@@ -13,6 +15,7 @@ namespace TestingFramework.Tests
         [OneTimeSetUp]
         public void OpenLoginPage()
         {
+            logs += "\tOneTimeSetUp\n";
             Browser.OpenStartPage();
 
             StartPage startPage = new StartPage();
@@ -22,9 +25,25 @@ namespace TestingFramework.Tests
             Screenshot.Take("Screen1.jpg");
         }
 
+        [SetUp]
+        public void PrepareEachTest()
+        {
+            // do somth before every test
+            logs += "\t\t\tPrepareEachTest\n";
+        }
+
+        [TearDown]
+        public void ClearAfterEachTest()
+        {
+            // do somth after every test
+            logs += "\t\t\tClearAfterEachTest\n";
+        }
+
+
         [Test]
         public void NegativeLoginTest()
         {
+            logs += "\t\t\t\tTest\n";
             _loginPage.LoginNegative("werwerwed@gmail.com", "wrongPassword");
             LoginPageNegative loginPageNegative = new LoginPageNegative();
 
@@ -44,6 +63,7 @@ namespace TestingFramework.Tests
         [OneTimeTearDown]
         public void CloseBrowser()
         {
+            logs += "\tOneTimeTearDown\n";
             Browser.GetDriver().Quit();
         }
 
