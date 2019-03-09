@@ -6,7 +6,7 @@ using TestingFramework.Tools;
 namespace TestingFramework.Tests
 {
     [TestFixture]
-    public class LoginNegativeTest
+    public class LoginNegativeTest : BaseTest
     {
         private LoginPage _loginPage;
 

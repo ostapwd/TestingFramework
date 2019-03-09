@@ -1,10 +1,12 @@
 ﻿using System.IO;
+using Ghpr.NUnit.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
-    class BaseTest
+    public class BaseTest
     {
         public string logs = "";
 
@@ -21,12 +23,22 @@ namespace TestingFramework.Tests
 
         }
 
+        [TearDown]
+        public void TakeScreenIfFailed()
+        {
+            var res = TestContext.CurrentContext.Result.Outcome;
+            if (res.Equals(ResultState.Failure) || res.Equals(ResultState.Error))
+            {
+                ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromBrowser());
+            }
+        }
+
         [OneTimeTearDown]
         public void BaseTestCloseTestFuxture()
         {
             logs += "BaseTestOneTimeTearDown\n";
 
-            Config.WriteLogs(logs);
+            //Config.WriteLogs(logs);
         }
     }
 }

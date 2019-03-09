@@ -25,7 +25,7 @@ namespace TestingFramework.Tools
         /// Takes screenshot from browser.
         /// </summary>
         /// <returns></returns>
-        private static byte[] TakeScreenshotFromBrowser()
+        public static byte[] TakeScreenshotFromBrowser()
         {
             byte[] screen = null;
             if (Browser.IsDriverStarted())
