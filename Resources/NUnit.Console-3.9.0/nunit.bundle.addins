@@ -4,3 +4,4 @@ addins/nunit-project-loader.dll
 addins/vs-project-loader.dll
 addins/teamcity-event-listener.dll
 addins/../../../TestingFramework/bin/Debug/Ghpr.NUnit.dll
+addins/../../TestingFramework/bin/Debug/Ghpr.NUnit.dll
