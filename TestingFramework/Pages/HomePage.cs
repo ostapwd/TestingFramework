@@ -14,6 +14,9 @@ namespace TestingFramework.Pages
         [FindsBy(How = How.CssSelector, Using = "#gh-ug")]
         private readonly IWebElement _usernameButtonWebElement;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id='gh-ac']")]
+        private readonly IWebElement _searchStringElement;
+
         private IWebElement AccountSettingsLinkWebElement
         {
             get
@@ -40,6 +43,12 @@ namespace TestingFramework.Pages
             AccountSettingsLinkWebElement.Click();
 
             return new AccountSettingPage();
+        }
+
+        public bool IsSearchStringShown()
+        {
+            Wait.ForElementIsShown(_searchStringElement);
+            return _searchStringElement.Displayed;
         }
     }
 }

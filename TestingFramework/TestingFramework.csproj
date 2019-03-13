@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests\LoginNegativeTest.cs" />
+    <Compile Include="Tests\LoginPositiveTest.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="CustomWebElements\Button.cs" />
     <Compile Include="CustomWebElements\Input.cs" />
