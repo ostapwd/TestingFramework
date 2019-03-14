@@ -8,10 +8,10 @@ namespace TestingFramework.Tools
     {
         public static void ForElementIsShown(IWebElement element)
         {
-            ForElementIsShown(TimeSpan.FromSeconds(5), element);
+            ForElementIsShown(element, TimeSpan.FromSeconds(5));
         }
 
-        public static void ForElementIsShown(TimeSpan timeSpan, IWebElement element)
+        public static void ForElementIsShown(IWebElement element, TimeSpan timeSpan)
         {
             new WebDriverWait(Browser.GetDriver(), timeSpan)
                 .Until((driver =>

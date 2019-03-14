@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace TestingFramework.Tests
@@ -79,6 +80,9 @@ namespace TestingFramework.Tests
         [Test, Order(3)]
         public void TestLoginButton()
         {
+            
+
+
             logs += "\t\t\tTestLoginButton\n";
             //Assert.IsTrue(loginPage.IsShown());
         }

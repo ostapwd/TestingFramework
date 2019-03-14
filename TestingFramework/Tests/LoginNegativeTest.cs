@@ -8,6 +8,7 @@ using TestingFramework.Tools;
 namespace TestingFramework.Tests
 {
     [TestFixture]
+    //[Parallelizable(ParallelScope.Fixtures)]
     public class LoginNegativeTest : BaseTest
     {
         private LoginPage _loginPage;
@@ -64,7 +65,7 @@ namespace TestingFramework.Tests
         public void CloseBrowser()
         {
             logs += "\tOneTimeTearDown\n";
-            Browser.GetDriver().Quit();
+            Browser.Close();
         }
 
     }

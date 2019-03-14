@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
@@ -38,6 +39,8 @@ namespace TestingFramework.Pages
             _passwordInputWebElement.SendKeys(password);
 
             _signInButtonWebElement.Click();
+
+            Thread.Sleep(10000);
 
             return new HomePage();
         }

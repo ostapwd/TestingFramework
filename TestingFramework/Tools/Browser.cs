@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -7,9 +8,7 @@ namespace TestingFramework.Tools
     class Browser
     {
         private Browser() { }
-
-        private static IWebDriver _driver = null;
-
+        private static readonly ThreadLocal<IWebDriver> Driver = new ThreadLocal<IWebDriver>();
         /// <summary>
         /// This method creates a new instance of a WebDriver,
         /// or returns already created.
@@ -17,23 +16,33 @@ namespace TestingFramework.Tools
         /// <returns>An instance of a WebDriver</returns>
         public static IWebDriver GetDriver()
         {
-            if (_driver == null)
+            if (Driver.Value == null)
             {
-                _driver = new ChromeDriver();
-                _driver.Manage().Window.Maximize();
+                Driver.Value = new ChromeDriver();
+                Driver.Value.Manage().Window.Maximize();
             }
 
-            return _driver;
+            return Driver.Value;
         }
 
         public static bool IsDriverStarted()
         {
-            return _driver != null;
+            return Driver.Value != null;
         }
 
         public static void OpenStartPage()
         {
             GetDriver().Navigate().GoToUrl("https://www.ebay.com/");
+        }
+
+        public static void Close()
+        {
+            if (IsDriverStarted())
+            {       
+                //Driver.Value.Close();
+                Driver.Value.Quit();
+                Driver.Value = null;
+            }
         }
     }
 

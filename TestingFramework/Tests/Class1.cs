@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
@@ -12,8 +15,8 @@ namespace TestingFramework.Tests
         [Test, Order(1)]
         public void Test1()
         {
-            Console.WriteLine(Config.GetRootDir());
-            Console.WriteLine("Running Test1");
+           Console.WriteLine(Config.GetRootDir());
+           Console.WriteLine("Running Test1");
         }
 
         [Test, Order(5)]

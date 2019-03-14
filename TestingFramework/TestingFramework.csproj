@@ -90,6 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomWebElements\Result.cs" />
+    <Compile Include="CustomWebElements\SearchSection.cs" />
+    <Compile Include="Pages\MyEbayPage.cs" />
+    <Compile Include="Tests\SearchTest .cs" />
     <Compile Include="Tests\LoginNegativeTest.cs" />
     <Compile Include="Tests\LoginPositiveTest.cs" />
     <Compile Include="Tools\Browser.cs" />

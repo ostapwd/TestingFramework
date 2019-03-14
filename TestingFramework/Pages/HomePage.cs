@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using TestingFramework.CustomWebElements;
 using TestingFramework.Tools;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
@@ -16,6 +17,32 @@ namespace TestingFramework.Pages
 
         [FindsBy(How = How.XPath, Using = "//input[@id='gh-ac']")]
         private readonly IWebElement _searchStringElement;
+
+        [FindsBy(How = How.XPath, Using = ".//a[text()=' My eBay']")]
+        private readonly IWebElement _myEbayLink;
+
+
+        #region Search container
+
+        [FindsBy(How = How.CssSelector, Using = "#gh-f")]
+        private readonly IWebElement _searchContainer;
+
+        public SearchSection GetSearchSection()
+        {
+            return new SearchSection(_searchContainer);
+        }
+
+        #endregion
+
+
+        public MyEbayPage OpenMyEbayPage()
+        {
+            Wait.ForElementIsShown(_myEbayLink, TimeSpan.FromSeconds(10));
+            _myEbayLink.Click();
+            //_myEbayLink.Click();
+
+            return new MyEbayPage();
+        }
 
         private IWebElement AccountSettingsLinkWebElement
         {
