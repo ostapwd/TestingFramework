@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
@@ -40,7 +39,6 @@ namespace TestingFramework.Pages
         {
             LoginInput.SetValue(login);
             PasswordInput.SetValue(password);
-
             SignInButton.Click();
 
             return new HomePage();
