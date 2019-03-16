@@ -51,20 +51,29 @@ namespace TestingFramework.Pages
 
         public HomePage Login(string login, string password)
         {
-            _usernanmeInputWebElement.SendKeys(login);
-            _passwordInputWebElement.SendKeys(password);
 
-            _signInButtonWebElement.Click();
+            LoginInput.SetValue(login);
+            PassInput.SetValue(password);
+            SignInButton.Click();
+
+            //_usernanmeInputWebElement.SendKeys(login);
+            //_passwordInputWebElement.SendKeys(password);
+
+            //_signInButtonWebElement.Click();
 
             return new HomePage();
         }
 
         public LoginPageNegative LoginNegative(string login, string password)
         {
-            _usernanmeInputWebElement.SendKeys(login);
-            _passwordInputWebElement.SendKeys(password);
+            LoginInput.SetValue(login);
+            PassInput.SetValue(password);
+            SignInButton.Click();
 
-            _signInButtonWebElement.Click();
+            //_usernanmeInputWebElement.SendKeys(login);
+            //_passwordInputWebElement.SendKeys(password);
+
+            //_signInButtonWebElement.Click();
 
             return new LoginPageNegative();
         }
