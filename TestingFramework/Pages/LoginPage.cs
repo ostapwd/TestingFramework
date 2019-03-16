@@ -25,38 +25,58 @@ namespace TestingFramework.Pages
             get { return new Input(_usernanmeInputWebElement);}
         }
 
+        public Input PasswordInput
+        {
+            get { return new Input(_passwordInputWebElement); }
+        }
+
+        public Button SignInButton
+        {
+            get { return new Button(_signInButtonWebElement); }
+        }
+
         public HomePage Login()
         {
             new WebDriverWait(Browser.GetDriver(), TimeSpan.FromSeconds(5))
                 .Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#userid")));
 
-            _usernanmeInputWebElement.Clear();
-            _usernanmeInputWebElement.SendKeys("ostapwdwdwd@gmail.com");
+            UsernameInput.SetValue("ostapwdwdwd@gmail.com");
+            //_usernanmeInputWebElement.Clear();
+            //_usernanmeInputWebElement.SendKeys("ostapwdwdwd@gmail.com");
 
-            _usernanmeInputWebElement.Click();
-            _passwordInputWebElement.SendKeys("fR7Hsj2k!kkd3");
+            PasswordInput.SetValue("fR7Hsj2k!kkd3");
+            //_usernanmeInputWebElement.Click();
+            //_passwordInputWebElement.SendKeys("fR7Hsj2k!kkd3");
 
-            _signInButtonWebElement.Click();
+            //_signInButtonWebElement.Click();
+
+            SignInButton.Click();
 
             return new HomePage();
         }
 
         public HomePage Login(string login, string password)
         {
-            _usernanmeInputWebElement.SendKeys(login);
-            _passwordInputWebElement.SendKeys(password);
+            //_usernanmeInputWebElement.SendKeys(login);
+            //_passwordInputWebElement.SendKeys(password);
+            UsernameInput.SetValue(login);
+            PasswordInput.SetValue(password);
 
-            _signInButtonWebElement.Click();
+            //_signInButtonWebElement.Click();
+            SignInButton.Click();
 
             return new HomePage();
         }
 
         public LoginPageNegative LoginNegative(string login, string password)
         {
-            _usernanmeInputWebElement.SendKeys(login);
-            _passwordInputWebElement.SendKeys(password);
+            //_usernanmeInputWebElement.SendKeys(login);
+            //_passwordInputWebElement.SendKeys(password);
 
-            _signInButtonWebElement.Click();
+            //_signInButtonWebElement.Click();
+            UsernameInput.SetValue(login);
+            PasswordInput.SetValue(password);
+            SignInButton.Click();
 
             return new LoginPageNegative();
         }
