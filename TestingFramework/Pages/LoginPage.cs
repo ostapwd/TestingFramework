@@ -20,6 +20,10 @@ namespace TestingFramework.Pages
         [FindsBy(How = How.CssSelector, Using = "#sgnBt")]
         private readonly IWebElement _signInButtonWebElement;
 
+        public Button SignInButton => new Button(_signInButtonWebElement);
+        public Input LoginInput => new Input(_usernanmeInputWebElement);
+        public Input PassInput => new Input(_passwordInputWebElement);
+
         public Input UsernameInput
         {
             get { return new Input(_usernanmeInputWebElement);}
@@ -30,13 +34,17 @@ namespace TestingFramework.Pages
             new WebDriverWait(Browser.GetDriver(), TimeSpan.FromSeconds(5))
                 .Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#userid")));
 
-            _usernanmeInputWebElement.Clear();
-            _usernanmeInputWebElement.SendKeys("ostapwdwdwd@gmail.com");
+            LoginInput.SetValue("ostapwdwdwd@gmail.com");
+            PassInput.SetValue("fR7Hsj2k!kkd3");
+            SignInButton.Click();
 
-            _usernanmeInputWebElement.Click();
-            _passwordInputWebElement.SendKeys("fR7Hsj2k!kkd3");
+            //_usernanmeInputWebElement.Clear();
+            //_usernanmeInputWebElement.SendKeys("ostapwdwdwd@gmail.com");
 
-            _signInButtonWebElement.Click();
+            //_usernanmeInputWebElement.Click();
+            //_passwordInputWebElement.SendKeys("fR7Hsj2k!kkd3");
+
+            //_signInButtonWebElement.Click();
 
             return new HomePage();
         }
