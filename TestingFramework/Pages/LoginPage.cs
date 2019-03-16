@@ -3,6 +3,7 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using TestingFramework.CustomWebElements;
 using TestingFramework.Tools;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
@@ -18,6 +19,11 @@ namespace TestingFramework.Pages
 
         [FindsBy(How = How.CssSelector, Using = "#sgnBt")]
         private readonly IWebElement _signInButtonWebElement;
+
+        public Input UsernameInput
+        {
+            get { return new Input(_usernanmeInputWebElement);}
+        }
 
         public HomePage Login()
         {
@@ -41,8 +47,6 @@ namespace TestingFramework.Pages
             _passwordInputWebElement.SendKeys(password);
 
             _signInButtonWebElement.Click();
-
-            Thread.Sleep(10000);
 
             return new HomePage();
         }
