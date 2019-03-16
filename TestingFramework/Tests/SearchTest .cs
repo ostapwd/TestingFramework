@@ -84,16 +84,6 @@ namespace TestingFramework.Tests
             //Console.WriteLine(myEbayPage._searchRresults.Count);
         }
 
-        [Test]
-        public void SearchForTeslaTest2()
-        {
-            HomePage homePage = _startPage.OpenLoginPage().Login("ostapwdwdwd@gmail.com", "fR7Hsj2k!kkd3");
-
-            homePage.GetSearchSection().Search("tesla pppp");
-
-          Thread.Sleep(10000);
-        }
-
         [OneTimeTearDown]
         public void CloseBrowser()
         {

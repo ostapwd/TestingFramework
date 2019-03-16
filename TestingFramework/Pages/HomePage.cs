@@ -10,7 +10,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace TestingFramework.Pages
 {
-    public class HomePage : BasePage
+    public class HomePage : BasePageWithSection
     {
         [FindsBy(How = How.CssSelector, Using = "#gh-ug")]
         private readonly IWebElement _usernameButtonWebElement;
@@ -20,19 +20,6 @@ namespace TestingFramework.Pages
 
         [FindsBy(How = How.XPath, Using = ".//a[text()=' My eBay']")]
         private readonly IWebElement _myEbayLink;
-
-
-        #region Search container
-
-        [FindsBy(How = How.CssSelector, Using = "#gh-f")]
-        private readonly IWebElement _searchContainer;
-
-        public SearchSection GetSearchSection()
-        {
-            return new SearchSection(_searchContainer);
-        }
-
-        #endregion
 
 
         public MyEbayPage OpenMyEbayPage()

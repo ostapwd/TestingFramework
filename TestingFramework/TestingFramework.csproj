@@ -90,12 +90,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
     <Compile Include="CustomWebElements\Result.cs" />
-    <Compile Include="CustomWebElements\SearchSection.cs" />
+    <Compile Include="Pages\BasePageWithSection.cs" />
     <Compile Include="Pages\MyEbayPage.cs" />
     <Compile Include="Tests\SearchTest .cs" />
     <Compile Include="Tests\LoginNegativeTest.cs" />
     <Compile Include="Tests\LoginPositiveTest.cs" />
+    <Compile Include="Tests\WrapperTest.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="CustomWebElements\Button.cs" />
     <Compile Include="CustomWebElements\Input.cs" />

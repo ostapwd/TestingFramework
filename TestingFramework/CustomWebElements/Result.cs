@@ -4,7 +4,7 @@ namespace TestingFramework.CustomWebElements
 {
     public class Result
     {
-        private IWebElement _wrappedWebElement;
+        private readonly IWebElement _wrappedWebElement;
 
         public Result(IWebElement webElement)
         {

@@ -19,13 +19,15 @@ namespace TestingFramework.Pages
         [FindsBy(How = How.CssSelector, Using = "#sgnBt")]
         private readonly IWebElement _signInButtonWebElement;
 
-
         public HomePage Login()
         {
             new WebDriverWait(Browser.GetDriver(), TimeSpan.FromSeconds(5))
                 .Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#userid")));
 
+            _usernanmeInputWebElement.Clear();
             _usernanmeInputWebElement.SendKeys("ostapwdwdwd@gmail.com");
+
+            _usernanmeInputWebElement.Click();
             _passwordInputWebElement.SendKeys("fR7Hsj2k!kkd3");
 
             _signInButtonWebElement.Click();
@@ -50,7 +52,6 @@ namespace TestingFramework.Pages
             _usernanmeInputWebElement.SendKeys(login);
             _passwordInputWebElement.SendKeys(password);
 
-            // SignInButton.Click();
             _signInButtonWebElement.Click();
 
             return new LoginPageNegative();
