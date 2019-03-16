@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Ghpr.NUnit.Utils;
+﻿using Ghpr.NUnit.Utils;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using TestingFramework.Tools;
@@ -10,10 +9,10 @@ namespace TestingFramework.Tests
     {
         public string logs = "";
 
-
         [OneTimeSetUp]
         public void BaseTestPrepareTestFixture()
         {
+            Browser.OpenStartPage();
             logs += "BaseTestOneTimeSetUp\n";
         }
 
@@ -21,6 +20,7 @@ namespace TestingFramework.Tests
         public void TakeScreenIfFailed()
         {
             logs += "\t\tBaseTestTearDown\n";
+
             var currentTestResult = TestContext.CurrentContext.Result.Outcome;
             if (currentTestResult.Equals(ResultState.Failure) ||
                 currentTestResult.Equals(ResultState.Error))
@@ -39,6 +39,7 @@ namespace TestingFramework.Tests
         [OneTimeTearDown]
         public void BaseTestCloseTestFuxture()
         {
+            Browser.Close();
             logs += "BaseTestOneTimeTearDown\n";
 
             Config.WriteLogs(logs);

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using TestingFramework.CustomWebElements;
 
@@ -58,7 +53,7 @@ namespace TestingFramework.Pages
             return searchResults;
         }
 
-        public List<IWebElement> SearchRresultsList()
+        public List<IWebElement> SearchResultsList()
         {
             List<IWebElement> searchRresults = new List<IWebElement>();
             foreach (var res in _searchRresults)

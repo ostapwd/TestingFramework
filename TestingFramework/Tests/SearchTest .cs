@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Threading;
-using Ghpr.NUnit.Utils;
 using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using OpenQA.Selenium;
 using TestingFramework.Pages;
 using TestingFramework.Tools;
 using Screenshot = TestingFramework.Tools.Screenshot;
@@ -20,12 +16,8 @@ namespace TestingFramework.Tests
         [OneTimeSetUp]
         public void OpenLoginPage()
         {
-            Browser.OpenStartPage();
 
             _startPage = new StartPage();
-            //startPage.OpenLoginPage();
-
-            //_loginPage = new LoginPage();
 
             Screenshot.Take("Screen1.jpg");
         }

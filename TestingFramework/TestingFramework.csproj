@@ -97,6 +97,8 @@
     <Compile Include="Tests\SearchTest .cs" />
     <Compile Include="Tests\LoginNegativeTest.cs" />
     <Compile Include="Tests\LoginPositiveTest.cs" />
+    <Compile Include="Tests\TestCallHierarchy\BaseTestCallHierarchy.cs" />
+    <Compile Include="Tests\TestCallHierarchy\TestCallHierarchy.cs" />
     <Compile Include="Tests\WrapperTest.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="CustomWebElements\Button.cs" />
@@ -109,8 +111,6 @@
     <Compile Include="Pages\PersonalInformationPage.cs" />
     <Compile Include="Pages\StartPage.cs" />
     <Compile Include="Tests\BaseTest.cs" />
-    <Compile Include="Tests\Class1.cs" />
-    <Compile Include="Tests\LoginPageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Config.cs" />
     <Compile Include="Tools\Screenshot.cs" />

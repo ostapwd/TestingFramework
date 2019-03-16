@@ -9,14 +9,9 @@ namespace TestingFramework.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'AboutMeLogin')]")]
         private readonly IWebElement aboutMePageEditLink;
 
-        private IWebElement AboutMePageEditLink
-        {
-            get
-            {
-                return Browser.GetDriver()
-                    .FindElement(By.XPath("//a[contains(@href, 'AboutMeLogin')]"));
-            }
-        }
+        private IWebElement AboutMePageEditLink =>
+            Browser.GetDriver()
+                .FindElement(By.XPath("//a[contains(@href, 'AboutMeLogin')]"));
 
         public string GetAboutMePageEditLinkText()
         {
