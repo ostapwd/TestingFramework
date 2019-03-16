@@ -1,44 +1,29 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TestingFramework.Pages;
+using TestingFramework.TestData;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
-    
+    [TestFixture]
+    //[Parallelizable(ParallelScope.Fixtures)]
     public class LoginNegativeTest : BaseTest
     {
         private LoginPage _loginPage;
 
         [OneTimeSetUp]
         public void OpenLoginPage()
-        {
-            logs += "\tOneTimeSetUp\n";
-
-            StartPage startPage = new StartPage();
-            startPage.OpenLoginPage();
+        {   
+            StartPage.OpenLoginPage();
             _loginPage = new LoginPage();
 
             Screenshot.Take("Screen1.jpg");
         }
-
-        [SetUp]
-        public void SetUpTestClass()
-        {
-            logs += "\t\t\tPrepareEachTest\n";
-        }
-
-        [TearDown]
-        public void TearDownTestClass()
-        {
-            logs += "\t\t\tClearAfterEachTest\n";
-        }
-
   
         [Test]
         public void NegativeLoginTest()
         {
-            _loginPage.LoginNegative("werwerwed@gmail.com", "wrongPassword");
+            _loginPage.LoginNegative(UserData.InvalidLogin, UserData.InvalidPassword);
             LoginPageNegative loginPageNegative = new LoginPageNegative();
 
             bool isElementShown = loginPageNegative.IsErrorLabelShown();
@@ -49,12 +34,5 @@ namespace TestingFramework.Tests
             Assert.IsTrue(isElementShown, "Error message should be shown!");
             Assert.AreEqual( "Oops, that's not a match!", elementInnerText);
         }
-
-        [OneTimeTearDown]
-        public void CloseBrowser()
-        {
-            Browser.Close();
-        }
-
     }
 }

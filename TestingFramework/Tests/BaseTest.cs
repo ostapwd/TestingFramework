@@ -1,26 +1,25 @@
 ﻿using Ghpr.NUnit.Utils;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
+using TestingFramework.Pages;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
     public class BaseTest
     {
-        public string logs = "";
+        protected StartPage StartPage;
 
         [OneTimeSetUp]
-        public void BaseTestPrepareTestFixture()
+        public void BaseTestOneTimeSetUp()
         {
             Browser.OpenStartPage();
-            logs += "BaseTestOneTimeSetUp\n";
+            StartPage = new StartPage();
         }
 
         [TearDown]
         public void TakeScreenIfFailed()
         {
-            logs += "\t\tBaseTestTearDown\n";
-
             var currentTestResult = TestContext.CurrentContext.Result.Outcome;
             if (currentTestResult.Equals(ResultState.Failure) ||
                 currentTestResult.Equals(ResultState.Error))
@@ -29,20 +28,10 @@ namespace TestingFramework.Tests
             }
         }
 
-        [SetUp]
-        public void PrepareEachTest()
-        {
-            // do somth before every test
-            logs += "\t\tBaseTestSetUp\n";
-        }
-
         [OneTimeTearDown]
-        public void BaseTestCloseTestFuxture()
+        public void BaseTestOneTimeTearDown()
         {
             Browser.Close();
-            logs += "BaseTestOneTimeTearDown\n";
-
-            Config.WriteLogs(logs);
         }
     }
 }

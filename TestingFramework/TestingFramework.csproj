@@ -93,13 +93,16 @@
     <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
     <Compile Include="CustomWebElements\Result.cs" />
     <Compile Include="Pages\BasePageWithSection.cs" />
+    <Compile Include="Pages\LoginPageLocators.cs" />
     <Compile Include="Pages\MyEbayPage.cs" />
+    <Compile Include="TestData\UserData.cs" />
+    <Compile Include="TestData\UserModel.cs" />
     <Compile Include="Tests\SearchTest .cs" />
     <Compile Include="Tests\LoginNegativeTest.cs" />
     <Compile Include="Tests\LoginPositiveTest.cs" />
     <Compile Include="Tests\TestCallHierarchy\BaseTestCallHierarchy.cs" />
     <Compile Include="Tests\TestCallHierarchy\TestCallHierarchy.cs" />
-    <Compile Include="Tests\WrapperTest.cs" />
+    <Compile Include="Tests\DropdownTest.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="CustomWebElements\Button.cs" />
     <Compile Include="CustomWebElements\Input.cs" />

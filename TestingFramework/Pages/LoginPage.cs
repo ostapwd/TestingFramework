@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using TestingFramework.CustomWebElements;
+using TestingFramework.TestData;
 using TestingFramework.Tools;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
@@ -28,8 +29,8 @@ namespace TestingFramework.Pages
             new WebDriverWait(Browser.GetDriver(), TimeSpan.FromSeconds(5))
                 .Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#userid")));
 
-            LoginInput.SetValue("ostapwdwdwd@gmail.com");
-            PasswordInput.SetValue("fR7Hsj2k!kkd3");
+            LoginInput.SetValue(UserData.Login);
+            PasswordInput.SetValue(UserData.Password);
             SignInButton.Click();
 
             return new HomePage();
@@ -44,6 +45,14 @@ namespace TestingFramework.Pages
             return new HomePage();
         }
 
+        public HomePage Login(UserModel user)
+        {
+            LoginInput.SetValue(user.Login);
+            PasswordInput.SetValue(user.Password);
+            SignInButton.Click();
+
+            return new HomePage();
+        }
         public LoginPageNegative LoginNegative(string login, string password)
         {
             LoginInput.SetValue(login);

@@ -20,12 +20,10 @@ namespace TestingFramework.Pages
         [FindsBy(How = How.XPath, Using = ".//a[text()=' My eBay']")]
         private readonly IWebElement _myEbayLink;
 
-
         public MyEbayPage OpenMyEbayPage()
         {
             Wait.ForElementIsShown(_myEbayLink, TimeSpan.FromSeconds(10));
             _myEbayLink.Click();
-            //_myEbayLink.Click();
 
             return new MyEbayPage();
         }

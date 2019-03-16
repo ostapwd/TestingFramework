@@ -3,7 +3,6 @@
 namespace TestingFramework.Tests.TestCallHierarchy
 {
     [TestFixture(Author = "Ostap", Description = "This test do...")]
-    //[Parallelizable(ParallelScope.Fixtures)]
     public class TestCallHierarchy : BaseTestCallHierarchy
     {
         [OneTimeSetUp]
