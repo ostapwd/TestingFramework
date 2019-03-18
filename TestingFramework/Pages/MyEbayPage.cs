@@ -1,6 +1,6 @@
 ﻿namespace TestingFramework.Pages
 {
-    public class MyEbayPage : BasePageWithSection
+    public class MyEbayPage : AbstractBasePageWithSection
     {
 
     }

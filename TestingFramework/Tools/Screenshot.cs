@@ -7,7 +7,7 @@ namespace TestingFramework.Tools
     {
         public static void Take(string screenshotName)
         {
-            string path = Config.GetRootDir() + "/Screenshots";
+            string path = Config.GetRootDir() + "/" + Config.ScreenshotsDir;
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -15,7 +15,7 @@ namespace TestingFramework.Tools
 
             path = path + "/" + screenshotName;
 
-            byte[] screen = TakeScreenshotFromBrowser();
+            byte[] screen = TakeScreenshotFromDriver();
             File.WriteAllBytes(path, screen);
         }
 
@@ -23,11 +23,11 @@ namespace TestingFramework.Tools
         /// Takes screenshot from browser.
         /// </summary>
         /// <returns></returns>
-        public static byte[] TakeScreenshotFromBrowser()
+        public static byte[] TakeScreenshotFromDriver()
         {
             byte[] screen = null;
-            if (Browser.IsDriverStarted())
-                screen = ((ITakesScreenshot) Browser.GetDriver()).GetScreenshot().AsByteArray;
+            if (Driver.IsDriverStarted())
+                screen = ((ITakesScreenshot) Driver.Get()).GetScreenshot().AsByteArray;
 
             return screen;
         }

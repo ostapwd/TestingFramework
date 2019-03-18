@@ -5,7 +5,7 @@ using TestingFramework.TestData;
 namespace TestingFramework.Tests
 {
     [TestFixture]
-    //[Parallelizable(ParallelScope.Fixtures)]
+    [Parallelizable(ParallelScope.Fixtures)]
     class LoginPositiveTest : BaseTest
     {
         private LoginPage _loginPage;

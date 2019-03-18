@@ -4,7 +4,7 @@ using TestingFramework.Tools;
 
 namespace TestingFramework.Pages
 {
-    public class LoginPageNegative : BasePage
+    public class LoginPageNegative : AbstractBasePage
     {
         [FindsBy(How = How.XPath, Using = "//p[@id='errf']")]
         private readonly IWebElement _errorWebElement;

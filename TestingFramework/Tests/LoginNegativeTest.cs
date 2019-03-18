@@ -6,20 +6,20 @@ using TestingFramework.Tools;
 namespace TestingFramework.Tests
 {
     [TestFixture]
-    //[Parallelizable(ParallelScope.Fixtures)]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class LoginNegativeTest : BaseTest
     {
         private LoginPage _loginPage;
 
         [OneTimeSetUp]
         public void OpenLoginPage()
-        {   
+        {
             StartPage.OpenLoginPage();
             _loginPage = new LoginPage();
 
             Screenshot.Take("Screen1.jpg");
         }
-  
+
         [Test]
         public void NegativeLoginTest()
         {
@@ -32,7 +32,7 @@ namespace TestingFramework.Tests
             Screenshot.Take("Screen2.jpg");
 
             Assert.IsTrue(isElementShown, "Error message should be shown!");
-            Assert.AreEqual( "Oops, that's not a match!", elementInnerText);
+            Assert.AreEqual("Oops, that's not a match!", elementInnerText);
         }
     }
 }

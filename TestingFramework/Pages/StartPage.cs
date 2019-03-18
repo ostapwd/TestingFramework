@@ -4,7 +4,7 @@ using TestingFramework.CustomWebElements;
 
 namespace TestingFramework.Pages
 {
-    public class StartPage : BasePageWithSection
+    public class StartPage : AbstractBasePageWithSection
     {
         [FindsBy(How = How.CssSelector, Using = "#gh-ug > a")]
         private readonly IWebElement _signInButtonWebElement;

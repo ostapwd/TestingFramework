@@ -4,13 +4,13 @@ using TestingFramework.Tools;
 
 namespace TestingFramework.Pages
 {
-    public class PersonalInformationPage : BasePage
+    public class PersonalInformationPage : AbstractBasePage
     {
         [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'AboutMeLogin')]")]
         private readonly IWebElement aboutMePageEditLink;
 
         private IWebElement AboutMePageEditLink =>
-            Browser.GetDriver()
+            Driver.Get()
                 .FindElement(By.XPath("//a[contains(@href, 'AboutMeLogin')]"));
 
         public string GetAboutMePageEditLinkText()

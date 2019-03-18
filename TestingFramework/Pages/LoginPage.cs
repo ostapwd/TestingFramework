@@ -9,7 +9,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace TestingFramework.Pages
 {
-    public class LoginPage : BasePage
+    public class LoginPage : AbstractBasePage
     {
         [FindsBy(How = How.CssSelector, Using = "#userid")]
         private readonly IWebElement _loginInputWebElement;
@@ -26,7 +26,7 @@ namespace TestingFramework.Pages
 
         public HomePage Login()
         {
-            new WebDriverWait(Browser.GetDriver(), TimeSpan.FromSeconds(5))
+            new WebDriverWait(Driver.Get(), TimeSpan.FromSeconds(5))
                 .Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#userid")));
 
             LoginInput.SetValue(UserData.Login);

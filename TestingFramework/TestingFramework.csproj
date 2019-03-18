@@ -74,6 +74,7 @@
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -90,9 +91,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomWebElements\AbstractWebElement.cs" />
+    <Compile Include="CustomWebElements\SearchResult.cs" />
     <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
-    <Compile Include="CustomWebElements\Result.cs" />
-    <Compile Include="Pages\BasePageWithSection.cs" />
+    <Compile Include="Pages\AbstractBasePageWithSection.cs" />
     <Compile Include="Pages\LoginPageLocators.cs" />
     <Compile Include="Pages\MyEbayPage.cs" />
     <Compile Include="TestData\UserData.cs" />
@@ -103,11 +105,11 @@
     <Compile Include="Tests\TestCallHierarchy\BaseTestCallHierarchy.cs" />
     <Compile Include="Tests\TestCallHierarchy\TestCallHierarchy.cs" />
     <Compile Include="Tests\DropdownTest.cs" />
-    <Compile Include="Tools\Browser.cs" />
+    <Compile Include="Tools\Driver.cs" />
     <Compile Include="CustomWebElements\Button.cs" />
     <Compile Include="CustomWebElements\Input.cs" />
     <Compile Include="Pages\AccountSettingPage.cs" />
-    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\AbstractBasePage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPageNegative.cs" />
@@ -116,6 +118,9 @@
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Config.cs" />
+    <Compile Include="Tools\JavaScriptExecutor.cs" />
+    <Compile Include="Tools\SoftAssert.cs" />
+    <Compile Include="Tools\WebDrivers.cs" />
     <Compile Include="Tools\Screenshot.cs" />
     <Compile Include="Tools\Wait.cs" />
   </ItemGroup>
@@ -127,6 +132,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Tools\App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

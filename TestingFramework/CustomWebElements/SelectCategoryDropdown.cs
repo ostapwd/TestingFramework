@@ -17,7 +17,6 @@ namespace TestingFramework.CustomWebElements
 
         public virtual void SelectDefaultValue()
         {
-            //DeselectAll();
             SelectByValue("0");
         }
     }

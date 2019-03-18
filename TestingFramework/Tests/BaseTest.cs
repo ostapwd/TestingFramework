@@ -13,25 +13,40 @@ namespace TestingFramework.Tests
         [OneTimeSetUp]
         public void BaseTestOneTimeSetUp()
         {
-            Browser.OpenStartPage();
+            Driver.OpenStartPage();
             StartPage = new StartPage();
         }
 
         [TearDown]
-        public void TakeScreenIfFailed()
+        public void TakeScreenshot()
         {
             var currentTestResult = TestContext.CurrentContext.Result.Outcome;
-            if (currentTestResult.Equals(ResultState.Failure) ||
-                currentTestResult.Equals(ResultState.Error))
+
+            if (Config.TakeScreenshotsOnFailure)
             {
-                ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromBrowser());
+                if (currentTestResult.Equals(ResultState.Failure) ||
+                    currentTestResult.Equals(ResultState.Error) ||
+                    currentTestResult.Equals(ResultState.Skipped) ||
+                    currentTestResult.Equals(ResultState.SetUpFailure) ||
+                    currentTestResult.Equals(ResultState.SetUpError))
+                {
+                    ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromDriver());
+                }
+            }
+
+            if (Config.TakeScreenshotsOnSuccess)
+            {
+                if (currentTestResult.Equals(ResultState.Success))
+                {
+                    ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromDriver());
+                }
             }
         }
 
         [OneTimeTearDown]
         public void BaseTestOneTimeTearDown()
         {
-            Browser.Close();
+            Driver.Quit();
         }
     }
 }

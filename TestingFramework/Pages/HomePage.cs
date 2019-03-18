@@ -9,7 +9,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace TestingFramework.Pages
 {
-    public class HomePage : BasePageWithSection
+    public class HomePage : AbstractBasePageWithSection
     {
         [FindsBy(How = How.CssSelector, Using = "#gh-ug")]
         private readonly IWebElement _usernameButtonWebElement;
@@ -32,14 +32,14 @@ namespace TestingFramework.Pages
         {
             get
             {
-                return Browser.GetDriver()
+                return Driver.Get()
                     .FindElement(By.CssSelector("#gh-uac > a"));
             }
         }
 
         public void HoverMosueOverUserName()
         {
-            Actions action = new Actions(Browser.GetDriver());
+            Actions action = new Actions(Driver.Get());
             action.MoveToElement(_usernameButtonWebElement)
                 .Build().Perform();
         }
@@ -48,7 +48,7 @@ namespace TestingFramework.Pages
         {
             HoverMosueOverUserName();
 
-            new WebDriverWait(Browser.GetDriver(), TimeSpan.FromSeconds(5))
+            new WebDriverWait(Driver.Get(), TimeSpan.FromSeconds(5))
                 .Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#gh-uac > a")));
 
             AccountSettingsLinkWebElement.Click();

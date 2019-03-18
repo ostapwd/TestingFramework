@@ -6,6 +6,7 @@ using TestingFramework.CustomWebElements;
 namespace TestingFramework.Tests
 {
     [TestFixture]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class DropdownTest : BaseTest
     {
         [Test]
@@ -29,6 +30,5 @@ namespace TestingFramework.Tests
         {
             Thread.Sleep(5000);
         }
-
     }
 }
