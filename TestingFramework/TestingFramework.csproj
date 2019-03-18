@@ -35,6 +35,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ghpr.Core, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.Core.0.9.4\lib\net452\Ghpr.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghpr.LocalFileSystem, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.LocalFileSystem.0.9.4\lib\net452\Ghpr.LocalFileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghpr.NUnit, Version=0.9.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.NUnit.0.9.4.1\lib\net452\Ghpr.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.Engine.3.9.0\lib\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit-agent, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.Engine.3.9.0\lib\nunit-agent.exe</HintPath>
+    </Reference>
+    <Reference Include="nunit-agent-x86, Version=3.9.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\NUnit.Engine.3.9.0\lib\nunit-agent-x86.exe</HintPath>
+    </Reference>
+    <Reference Include="nunit.engine, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.Engine.3.9.0\lib\nunit.engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.engine.api, Version=3.0.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.Engine.3.9.0\lib\nunit.engine.api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -45,6 +74,7 @@
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -61,26 +91,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomWebElements\AbstractWebElement.cs" />
+    <Compile Include="CustomWebElements\SearchResult.cs" />
+    <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
+    <Compile Include="Pages\AbstractBasePageWithSection.cs" />
+    <Compile Include="Pages\LoginPageLocators.cs" />
+    <Compile Include="Pages\MyEbayPage.cs" />
+    <Compile Include="TestData\UserData.cs" />
+    <Compile Include="TestData\UserModel.cs" />
+    <Compile Include="Tests\SearchTest .cs" />
     <Compile Include="Tests\LoginNegativeTest.cs" />
-    <Compile Include="Tools\Browser.cs" />
+    <Compile Include="Tests\LoginPositiveTest.cs" />
+    <Compile Include="Tests\TestCallHierarchy\BaseTestCallHierarchy.cs" />
+    <Compile Include="Tests\TestCallHierarchy\TestCallHierarchy.cs" />
+    <Compile Include="Tests\DropdownTest.cs" />
+    <Compile Include="Tools\Driver.cs" />
     <Compile Include="CustomWebElements\Button.cs" />
     <Compile Include="CustomWebElements\Input.cs" />
     <Compile Include="Pages\AccountSettingPage.cs" />
-    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\AbstractBasePage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPageNegative.cs" />
     <Compile Include="Pages\PersonalInformationPage.cs" />
     <Compile Include="Pages\StartPage.cs" />
     <Compile Include="Tests\BaseTest.cs" />
-    <Compile Include="Tests\Class1.cs" />
-    <Compile Include="Tests\LoginPageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Config.cs" />
+    <Compile Include="Tools\JavaScriptExecutor.cs" />
+    <Compile Include="Tools\SoftAssert.cs" />
+    <Compile Include="Tools\WebDrivers.cs" />
+    <Compile Include="Tools\Screenshot.cs" />
     <Compile Include="Tools\Wait.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Ghpr.Core.Settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Ghpr.NUnit.Settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+    <None Include="Tools\App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -89,11 +141,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props'))" />
-    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.141.5\build\Selenium.InternetExplorer.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.InternetExplorer.WebDriver.3.141.5\build\Selenium.InternetExplorer.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.72.0.3626.69\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.72.0.3626.69\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets')" />
-  <Import Project="..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets')" />
   <Import Project="..\packages\Selenium.InternetExplorer.WebDriver.3.141.5\build\Selenium.InternetExplorer.WebDriver.targets" Condition="Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.141.5\build\Selenium.InternetExplorer.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.72.0.3626.69\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.72.0.3626.69\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>

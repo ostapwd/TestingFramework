@@ -3,7 +3,7 @@ using SeleniumExtras.PageObjects;
 
 namespace TestingFramework.Pages
 {
-    public class AccountSettingPage : BasePage
+    public class AccountSettingPage : AbstractBasePage
     {
         [FindsBy(How = How.XPath, Using = "//a[text()='Personal Information']")]
         private readonly IWebElement _personalInformationLinkWebElement;

@@ -1,17 +1,19 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using TestingFramework.CustomWebElements;
 
 namespace TestingFramework.Pages
 {
-    public class StartPage : BasePage
+    public class StartPage : AbstractBasePageWithSection
     {
         [FindsBy(How = How.CssSelector, Using = "#gh-ug > a")]
         private readonly IWebElement _signInButtonWebElement;
 
+        public Button SignInButton => new Button(_signInButtonWebElement);
+
         public LoginPage OpenLoginPage()
         {
-            _signInButtonWebElement.Click();
-
+            SignInButton.Click();
             return new LoginPage();
         }
     }

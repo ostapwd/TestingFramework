@@ -2,7 +2,7 @@
 
 namespace TestingFramework.CustomWebElements
 {
-    class Button
+    public class Button
     {
         private readonly IWebElement _wrappedWebElement;
 

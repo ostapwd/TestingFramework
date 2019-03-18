@@ -2,7 +2,7 @@
 
 namespace TestingFramework.CustomWebElements
 {
-    class Input
+    public class Input
     {
         private readonly IWebElement _wrappedWebElement;
 
