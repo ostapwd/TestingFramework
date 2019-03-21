@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using NUnit.Framework;
 
-namespace AlphadasAT.Tools
+namespace TestingFramework.Tools
 {
     public class SoftAssert
     {
