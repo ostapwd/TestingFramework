@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using AlphadasAT.Tools;
 using NUnit.Framework;
 using TestingFramework.CustomWebElements;
 using TestingFramework.Pages;
 using TestingFramework.TestData;
+using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
