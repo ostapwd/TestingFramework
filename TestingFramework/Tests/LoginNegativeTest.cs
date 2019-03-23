@@ -20,7 +20,7 @@ namespace TestingFramework.Tests
             Screenshot.Take("Screen1.jpg");
         }
 
-        [Test]
+        //[Test]
         public void NegativeLoginTest()
         {
             _loginPage.LoginNegative(UserData.InvalidLogin, UserData.InvalidPassword);
