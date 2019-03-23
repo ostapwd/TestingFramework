@@ -18,6 +18,7 @@ namespace TestingFramework.Pages
         private readonly IWebElement _searchStringElement;
 
         [FindsBy(How = How.XPath, Using = ".//a[text()=' My eBay']")]
+
         private readonly IWebElement _myEbayLink;
 
         public MyEbayPage OpenMyEbayPage()

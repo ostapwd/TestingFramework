@@ -38,7 +38,7 @@ namespace TestingFramework.Tests
             {
                 if (currentTestResult.Equals(ResultState.Success))
                 {
-                    ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromDriver());
+                     ScreenHelper.SaveScreenshot(Screenshot.TakeScreenshotFromDriver());
                 }
             }
         }
