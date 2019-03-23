@@ -96,11 +96,13 @@
     <Compile Include="CustomWebElements\SearchResult.cs" />
     <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
     <Compile Include="Pages\AbstractBasePageWithSection.cs" />
+    <Compile Include="Pages\FeedbackFormPage.cs" />
     <Compile Include="Pages\LoginPageLocators.cs" />
     <Compile Include="Pages\MesgEbayPage.cs" />
     <Compile Include="Pages\MyEbayPage.cs" />
     <Compile Include="TestData\UserData.cs" />
     <Compile Include="TestData\UserModel.cs" />
+    <Compile Include="Tests\FeedbackTest.cs" />
     <Compile Include="Tests\SearchForDnDTest.cs" />
     <Compile Include="Tests\SearchTest .cs" />
     <Compile Include="Tests\LoginNegativeTest.cs" />
