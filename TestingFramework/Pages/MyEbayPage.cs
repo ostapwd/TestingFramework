@@ -19,7 +19,7 @@ namespace TestingFramework.Pages
             private set { }
         }
 
-        public MesgEbayPage OpenMessagesTab()
+        public MesgEbayPage OpenMessagesPage()
         {
             MessagesPageLinkWebElement.Click();
             return new MesgEbayPage();
