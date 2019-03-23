@@ -1,31 +1,31 @@
 ﻿using System;
 using NUnit.Framework;
 using TestingFramework.Pages;
+using TestingFramework.TestData;
+using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
-    class ClickNewLinkTest : BaseTest
+    public class ClickNewLinkTest : BaseTest
     {
-
-        private LoginPage _loginPage;
+        private TellUsPage tellUsPage;
 
         [OneTimeSetUp]
         public void OpenLoginPage()
         {
-            StartPage.OpenLoginPage();
-            _loginPage = new LoginPage();
+            tellUsPage = StartPage.OpenLoginPage()
+                .Login(UserData.User)
+                .OpenMyEbayPage().OpenMessagesPage().OpenTellUsPage();
         }
 
         [Test]
         public void ClickNewLink()
         {
-            HomePage homePage = _loginPage.Login(TestData.UserData.User);
+            Assert.AreEqual(Driver.Get().Url, "http://connect.ebay.com/srv/survey/a/m2m.mmi",
+                "Wrong URL in the browser");
 
-            homePage.OpenMyEbayPage().OpenMessagesPage().OpenTellUsPage();
-
-            //Console.Read();
-            //bool isElementShown = homePage.IsSearchStringShown();           
-            //Assert.IsTrue(isElementShown, "Element should be shown!");
+            Assert.IsTrue(tellUsPage.IsSendButtonShown(), 
+               "'Tell us what you think' page should be shown");
         }
     }
 }

@@ -18,6 +18,8 @@ namespace TestingFramework.Pages
             Wait.ForElementIsShown(_tellusLink, TimeSpan.FromSeconds(10));
             _tellusLink.Click();
 
+            Driver.SwitchToNewTab();
+
             return new TellUsPage();
         }
 
