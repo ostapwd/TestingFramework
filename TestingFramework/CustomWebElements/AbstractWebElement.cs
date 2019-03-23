@@ -2,7 +2,7 @@
 using SeleniumExtras.PageObjects;
 using TestingFramework.Tools;
 
-namespace TestingFramework.CustomWebElements.ComplexWebElements
+namespace TestingFramework.CustomWebElements
 {
     public abstract class AbstractWebElement
     {
