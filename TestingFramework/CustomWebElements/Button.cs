@@ -1,14 +1,12 @@
 ﻿using OpenQA.Selenium;
+using TestingFramework.CustomWebElements.ComplexWebElements;
 
 namespace TestingFramework.CustomWebElements
 {
-    public class Button
+    public class Button : AbstractWebElement
     {
-        private readonly IWebElement _wrappedWebElement;
-
-        public Button(IWebElement webElement)
+        public Button(IWebElement webElement) : base(webElement)
         {
-            _wrappedWebElement = webElement;
         }
 
         public void Click()
