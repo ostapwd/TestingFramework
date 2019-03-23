@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -54,6 +56,14 @@ namespace TestingFramework.Tools
         public static void OpenStartPage()
         {
             Get().Navigate().GoToUrl(Config.AppURI);
+        }
+
+        public static void SwitchToNewTab()
+        {
+            var windows = Get().WindowHandles;
+            var currentWindow = Get().CurrentWindowHandle;
+            var newWindow = windows.First(i => !i.Equals(Driver.Get().CurrentWindowHandle));
+            Get().SwitchTo().Window(newWindow);
         }
 
         public static void Quit()

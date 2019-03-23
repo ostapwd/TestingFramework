@@ -2,13 +2,10 @@
 
 namespace TestingFramework.CustomWebElements
 {
-    public class Input
+    public class Input : AbstractWebElement
     {
-        private readonly IWebElement _wrappedWebElement;
-
-        public Input(IWebElement webElement)
+        public Input(IWebElement webElement) : base(webElement)
         {
-            _wrappedWebElement = webElement;
         }
 
         public void SetValue(string valueToSet)

@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using TestingFramework.CustomWebElements.ComplexWebElements;
 
 namespace TestingFramework.CustomWebElements
 {
