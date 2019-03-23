@@ -92,10 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomWebElements\AbstractWebElement.cs" />
+    <Compile Include="CustomWebElements\Link.cs" />
     <Compile Include="CustomWebElements\SearchResult.cs" />
     <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
     <Compile Include="Pages\AbstractBasePageWithSection.cs" />
     <Compile Include="Pages\LoginPageLocators.cs" />
+    <Compile Include="Pages\MesgEbayPage.cs" />
     <Compile Include="Pages\MyEbayPage.cs" />
     <Compile Include="TestData\UserData.cs" />
     <Compile Include="TestData\UserModel.cs" />

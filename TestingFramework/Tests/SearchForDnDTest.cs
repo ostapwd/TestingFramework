@@ -14,7 +14,6 @@ namespace TestingFramework.Tests
     class SearchForDnDTest : BaseTest
     {
         private SoftAssert _softAssert = null;
-        private LoginPage _loginPage;
 
         [SetUp]
         public void SetUp()
@@ -22,19 +21,9 @@ namespace TestingFramework.Tests
             _softAssert = new SoftAssert();
         }
 
-        [OneTimeSetUp]
-        public void OpenLoginPage()
-        {
-            StartPage.OpenLoginPage();
-            _loginPage = new LoginPage();
-        }
-
         [Test]
         public void SearchForDiceTest()
         {
-            HomePage homePage = _loginPage.Login(UserData.User);
-            Console.WriteLine(StartPage._searchRresults.Count);
-
             StartPage.CategoriesDropdown.SelectByText("Toys & Hobbies");
             Thread.Sleep(2000);
 
@@ -61,18 +50,9 @@ namespace TestingFramework.Tests
 
         }
 
-        [OneTimeTearDown]
-        public void WaitBeforeClosing()
-        {
-            Thread.Sleep(5000);
-        }
-
         [Test]
         public void SearchDnDWithAndWithoutCategories()
         {
-            HomePage homePage = _loginPage.Login(UserData.User);
-            Console.WriteLine(StartPage._searchRresults.Count);
-
             StartPage.Search("DnD");
             Console.WriteLine(StartPage._searchRresults.Count);
             int AllCategoriesSearch = StartPage._searchRresults.Count;
@@ -107,6 +87,12 @@ namespace TestingFramework.Tests
             Console.WriteLine(CategorzedDices);
 
             Assert.AreEqual(CategorzedDices, AllCategoriesDices);
+        }
+
+        [OneTimeTearDown]
+        public void WaitBeforeClosing()
+        {
+            Thread.Sleep(5000);
         }
     }
 }
