@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomWebElements\AbstractWebElement.cs" />
+    <Compile Include="CustomWebElements\CheckBox.cs" />
     <Compile Include="CustomWebElements\Link.cs" />
     <Compile Include="CustomWebElements\SearchResult.cs" />
     <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Pages\TellUsPage.cs" />
     <Compile Include="TestData\UserData.cs" />
     <Compile Include="TestData\UserModel.cs" />
+    <Compile Include="Tests\CheckBoxesTest.cs" />
     <Compile Include="Tests\ClickNewLinkTest.cs" />
     <Compile Include="Tests\SearchForDnDTest.cs" />
     <Compile Include="Tests\SearchTest .cs" />
