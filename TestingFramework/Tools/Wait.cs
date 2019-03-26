@@ -64,6 +64,34 @@ namespace TestingFramework.Tools
             return element;
         }
 
+        public static void ForReadyState(TimeSpan? timeSpan = null)
+        {
+            try
+            {
+                Wait.Time(500);
+                new WebDriverWait(Driver.Get(), timeSpan ?? Config.WaitForReadyState)
+                    .Until(driver => (bool) (driver as IJavaScriptExecutor)
+                        .ExecuteScript("return document.readyState == 'complete'"));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        public static void ForAjax(TimeSpan? timeSpan = null)
+        {
+            try
+            {
+                Wait.Time(500);
+                new WebDriverWait(Driver.Get(), timeSpan ?? Config.WaitForAjax)
+                    .Until(driver => (bool) (driver as IJavaScriptExecutor)
+                        .ExecuteScript("return (jQuery.active == 0)"));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         public static void Time(TimeSpan timeToWait)
         {
             Thread.Sleep(timeToWait);

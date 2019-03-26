@@ -29,7 +29,7 @@ namespace TestingFramework.Tools
             {
                 return TestContext.CurrentContext.WorkerId;
             }
-            catch (NullReferenceException e)
+            catch (NullReferenceException)
             {
                 return "0";
             }

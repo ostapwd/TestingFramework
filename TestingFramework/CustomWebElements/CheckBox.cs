@@ -8,13 +8,13 @@ namespace TestingFramework.CustomWebElements
         {
         }
 
-        public void Check()
+        public void Select()
         {
             if (!_wrappedWebElement.Selected)
                 _wrappedWebElement.Click();
         }
 
-        public void UnCheck()
+        public void Unselect()
         {
             if (_wrappedWebElement.Selected)
                 _wrappedWebElement.Click();

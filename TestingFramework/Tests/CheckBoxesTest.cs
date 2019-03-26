@@ -26,37 +26,30 @@ namespace TestingFramework.Tests
             _softAssert = new SoftAssert();
         }
 
-        [Test]
+        [Test, Order(1)]
         public void VerifySelectCheckBoxesInTable()
         {
-            //Wait.Time(TimeSpan.FromSeconds(5));
+            messagesPage.CheckAll.Select();
 
-            messagesPage.CheckAll.Check();
-
-            //List<CheckBox> cbList = messagesPage.GetAllTableCheckBoxes();
-            
             foreach (var result in messagesPage.GetAllTableCheckBoxes())
             {
                 _softAssert.IsTrue(result.IsSelected(), "Checkbox is not selected. Should be selected.");
             }
 
             _softAssert.AssertAll();
-
         }
-        [Test]
+
+        [Test, Order(1)]
         public void VerifyUnSelectCheckBoxesInTable()
         {
-           // Wait.Time(TimeSpan.FromSeconds(5));
-
-            messagesPage.CheckAll.UnCheck();
+            messagesPage.CheckAll.Unselect();
 
             foreach (var result in messagesPage.GetAllTableCheckBoxes())
             {
                 _softAssert.IsFalse(result.IsSelected(), "Checkbox is selected. Should be unselected.");
             }
-            
-            _softAssert.AssertAll();
 
+            _softAssert.AssertAll();
         }
     }
 }

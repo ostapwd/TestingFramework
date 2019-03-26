@@ -1,13 +1,10 @@
 ﻿using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using TestingFramework.CustomWebElements;
 using TestingFramework.Tools;
 using System.Collections.Generic;
 using System.Linq;
-using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace TestingFramework.Pages
 {
@@ -44,7 +41,5 @@ namespace TestingFramework.Pages
 
             return new TellUsPage();
         }
-
-
     }
 }

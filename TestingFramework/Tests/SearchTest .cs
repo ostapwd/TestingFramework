@@ -31,13 +31,13 @@ namespace TestingFramework.Tests
 
             // Method allows to scroll to WebElement
             JavaScriptExecutor.ScrollIntoView(StartPage.GetSearchResult(20).WrappedWebElement);
-            Wait.Time(TimeSpan.FromSeconds(3));
+            Wait.Time(TimeSpan.FromSeconds(2));
 
             StartPage.GetSearchResult(40).ScrollIntoView();
-            Wait.Time(TimeSpan.FromSeconds(3));
+            Wait.Time(TimeSpan.FromSeconds(2));
 
             StartPage.GetSearchResult(2).ScrollIntoView();
-            Wait.Time(TimeSpan.FromSeconds(3));
+            Wait.Time(TimeSpan.FromSeconds(2));
 
             foreach (var result in StartPage.GetAllSearchResults())
             {

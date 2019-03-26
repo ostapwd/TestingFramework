@@ -68,6 +68,8 @@ namespace TestingFramework.Tools
             var currentWindow = Get().CurrentWindowHandle;
             var newWindow = windows.First(i => !i.Equals(Driver.Get().CurrentWindowHandle));
             Get().SwitchTo().Window(newWindow);
+
+            Wait.ForAjax();
         }
 
         public static void Quit()

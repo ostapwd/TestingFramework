@@ -23,7 +23,9 @@ namespace TestingFramework.Tests
         //[Test]
         public void NegativeLoginTest()
         {
+            // Here we are setting INCORRECT CREDENTIALS to fail the test!
             _loginPage.LoginNegative(UserData.InvalidLogin, UserData.InvalidPassword);
+
             LoginPageNegative loginPageNegative = new LoginPageNegative();
 
             bool isElementShown = loginPageNegative.IsErrorLabelShown();

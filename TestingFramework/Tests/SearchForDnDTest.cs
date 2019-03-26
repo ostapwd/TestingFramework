@@ -5,13 +5,12 @@ using System.Threading;
 using NUnit.Framework;
 using TestingFramework.CustomWebElements;
 using TestingFramework.Pages;
-using TestingFramework.TestData;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
     [TestFixture]
-    class SearchForDnDTest : BaseTest
+    public class SearchForDnDTest : BaseTest
     {
         private SoftAssert _softAssert = null;
 
@@ -21,11 +20,11 @@ namespace TestingFramework.Tests
             _softAssert = new SoftAssert();
         }
 
-        [Test]
+        [Test, Order(1)]
         public void SearchForDiceTest()
         {
             StartPage.CategoriesDropdown.SelectByText("Toys & Hobbies");
-            Thread.Sleep(2000);
+            Wait.Time(1000);
 
             StartPage.Search("DnD");
 
@@ -50,7 +49,7 @@ namespace TestingFramework.Tests
 
         }
 
-        [Test]
+        [Test, Order(1)]
         public void SearchDnDWithAndWithoutCategories()
         {
             StartPage.Search("DnD");
@@ -69,7 +68,7 @@ namespace TestingFramework.Tests
             Console.WriteLine(AllCategoriesDices);
 
             StartPage.CategoriesDropdown.SelectByText("Toys & Hobbies");
-            Thread.Sleep(2000);
+            Wait.Time(1000);
 
             StartPage.Search("DnD");
             Console.WriteLine(StartPage._searchRresults.Count);
@@ -92,7 +91,7 @@ namespace TestingFramework.Tests
         [OneTimeTearDown]
         public void WaitBeforeClosing()
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
         }
     }
 }

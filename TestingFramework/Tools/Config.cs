@@ -9,6 +9,10 @@ namespace TestingFramework.Tools
     {
         public static readonly TimeSpan WaitForWebElementDisplayed = TimeSpan.FromSeconds(10);
 
+        public static readonly TimeSpan WaitForReadyState = TimeSpan.FromSeconds(5);
+
+        public static readonly TimeSpan WaitForAjax = TimeSpan.FromSeconds(5);
+
         public static readonly bool TakeScreenshotsOnSuccess = Convert.ToBoolean(ConfigurationManager.AppSettings["TakeScreenshotsOnSuccess"]);
 
         public static readonly bool TakeScreenshotsOnFailure = Convert.ToBoolean(ConfigurationManager.AppSettings["TakeScreenshotsOnFailure"]);

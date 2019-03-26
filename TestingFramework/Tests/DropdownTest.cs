@@ -2,10 +2,12 @@
 using System.Threading;
 using NUnit.Framework;
 using TestingFramework.CustomWebElements;
+using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
     [TestFixture]
+    [TestFixture(Author = "Ostap", Description = "This test checks category dropdown")]
     [Parallelizable(ParallelScope.Fixtures)]
     public class DropdownTest : BaseTest
     {
@@ -13,14 +15,14 @@ namespace TestingFramework.Tests
         public void OpenDropdownTest()
         {
             StartPage.CategoriesDropdown.SelectByIndex(3);
-            Thread.Sleep(2000);
+            Wait.Time(1000);
             Console.WriteLine(StartPage.CategoriesDropdown.SelectedOption.Text);
 
             SelectCategoryDropdown dropdown = StartPage.CategoriesDropdown;
             dropdown.SelectByValue("550");
-            Thread.Sleep(2000);
+            Wait.Time(1000);
             dropdown.SelectByText("Crafts");
-            Thread.Sleep(2000);
+            Wait.Time(1000);
 
             dropdown.SelectDefaultValue();
         }
@@ -28,7 +30,7 @@ namespace TestingFramework.Tests
         [OneTimeTearDown]
         public void WaitBeforeClosing()
         {
-            Thread.Sleep(5000);
+            Wait.Time(1000);
         }
     }
 }

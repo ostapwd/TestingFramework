@@ -14,6 +14,5 @@ namespace TestingFramework.Pages
 
             return new PersonalInformationPage();
         }
-
     }
 }

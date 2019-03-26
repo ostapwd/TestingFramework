@@ -85,7 +85,7 @@ namespace TestingFramework.Tools
             {
                 Assert.True(_status);
             }
-            catch (AssertionException exception)
+            catch (AssertionException)
             {
                 throw new AssertionException(_messages.ToString());
             }
