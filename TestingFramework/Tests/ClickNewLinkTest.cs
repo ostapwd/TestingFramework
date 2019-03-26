@@ -1,12 +1,12 @@
-﻿using System;
-using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TestingFramework.Pages;
 using TestingFramework.TestData;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
+    [TestFixture]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class ClickNewLinkTest : BaseTest
     {
         private TellUsPage tellUsPage;
@@ -22,7 +22,6 @@ namespace TestingFramework.Tests
         [Test]
         public void ClickNewLink()
         {
-            Thread.Sleep(20000);
             Assert.AreEqual(Driver.Get().Url, "http://connect.ebay.com/srv/survey/a/m2m.mmi",
                 "Wrong URL in the browser");
 

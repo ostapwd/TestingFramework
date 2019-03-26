@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using NUnit.Framework;
-using TestingFramework.CustomWebElements;
+﻿using NUnit.Framework;
 using TestingFramework.Pages;
 using TestingFramework.TestData;
 using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
+    [TestFixture]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class CheckBoxesTest : BaseTest
     {
         private MessagesPage messagesPage;
@@ -17,17 +15,21 @@ namespace TestingFramework.Tests
         [OneTimeSetUp]
         public void OpenMessagesPage()
         {
-            _softAssert = new SoftAssert();
-
             messagesPage = StartPage.OpenLoginPage()
                 .Login(UserData.User)
                 .OpenMyEbayPage().OpenMessagesPage();
         }
 
+        [SetUp]
+        public void InitSoftAssert()
+        {
+            _softAssert = new SoftAssert();
+        }
+
         [Test]
         public void VerifySelectCheckBoxesInTable()
         {
-            Wait.Time(TimeSpan.FromSeconds(5));
+            //Wait.Time(TimeSpan.FromSeconds(5));
 
             messagesPage.CheckAll.Check();
 
@@ -44,7 +46,7 @@ namespace TestingFramework.Tests
         [Test]
         public void VerifyUnSelectCheckBoxesInTable()
         {
-            Wait.Time(TimeSpan.FromSeconds(5));
+           // Wait.Time(TimeSpan.FromSeconds(5));
 
             messagesPage.CheckAll.UnCheck();
 
