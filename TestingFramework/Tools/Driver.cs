@@ -34,7 +34,11 @@ namespace TestingFramework.Tools
             IWebDriver driver = null;
 
             if (Config.WebDriver.Equals("Chrome"))
-                driver = new ChromeDriver();
+            { 
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument("disable-infobars");
+                driver = new ChromeDriver(options);
+            }
             else if (Config.WebDriver.Equals("Firefox"))
                 driver = new FirefoxDriver();
             else if (Config.WebDriver.Equals("InternetExplorer"))
