@@ -12,5 +12,7 @@ namespace TestingFramework.CustomWebElements
         {
             _wrappedWebElement.Click();
         }
+
+
     }
 }

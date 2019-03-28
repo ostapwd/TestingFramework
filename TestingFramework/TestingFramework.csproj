@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomWebElements\AbstractWebElement.cs" />
+    <Compile Include="CustomWebElements\Checkbox.cs" />
     <Compile Include="CustomWebElements\Link.cs" />
     <Compile Include="CustomWebElements\SearchResult.cs" />
     <Compile Include="CustomWebElements\SelectCategoryDropdown.cs" />

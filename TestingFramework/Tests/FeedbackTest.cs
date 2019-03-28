@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TestingFramework.Pages;
 using TestingFramework.TestData;
+using TestingFramework.Tools;
 
 namespace TestingFramework.Tests
 {
@@ -22,17 +23,35 @@ namespace TestingFramework.Tests
         [OneTimeSetUp]
         public void OpenLoginPage()
         {
-            StartPage.OpenLoginPage();
-            _loginPage = new LoginPage();
+            //StartPage.OpenLoginPage();
+            //_loginPage = new LoginPage();
         }
 
         [Test]
         public void ReachFeedbackPageTest()
         {
-            _homepage = _loginPage.Login(TestData.UserData.Login, TestData.UserData.Password);
-            _myEbayPage = _homepage.OpenMyEbayPage();
-            _mesgEbayPage = _myEbayPage.OpenMessagesPage();
-            _feedbackFormPage = _mesgEbayPage.ReachFeedbackForm();
+            string expectedUrl = "http://connect.ebay.com/srv/survey/a/m2m.mmi";
+            StartPage.OpenLoginPage()
+                  .Login(TestData.UserData.Login, TestData.UserData.Password)
+                  .OpenMyEbayPage()
+                  .OpenMessagesPage()
+                  .ReachFeedbackForm();
+
+           string currentUrl = Driver.Get().Url;
+           Assert.AreEqual(expectedUrl, currentUrl);
+        
+        }
+
+        [Test]
+        public void CheckAllMessagesWithMasterCheckboxTest()
+        {
+           var _mesgEbayPage = StartPage.OpenLoginPage()
+                  .Login(TestData.UserData.Login, TestData.UserData.Password)
+                  .OpenMyEbayPage()
+                  .OpenMessagesPage();
+            _mesgEbayPage.SelectAllChecked.Check();
+
+
         }
 
         [OneTimeTearDown]
