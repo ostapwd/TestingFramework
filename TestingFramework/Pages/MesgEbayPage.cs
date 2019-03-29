@@ -18,8 +18,8 @@ namespace TestingFramework.Pages
         private readonly IWebElement _MasterCheckboxWebElement;
 
         [FindsBy(How = How.XPath, Using = "//tr[@class='msg-unread row']//input[@name='LineID']")]
-        private readonly IWebElement _AllCheckMessagesWebElement;
-        
+        private readonly IList<IWebElement> _AllCheckMessagesWebElement;
+
 
         public Link FeedbackLinkWebElement
         {
@@ -47,13 +47,12 @@ namespace TestingFramework.Pages
 
         }
 
-        //public List<Checkbox> RetrieveAllCheckboxes()
-        //{
-        //    //List<Checkbox> resultList = new List<Checkbox>(_AllCheckMessagesWebElement);
-        //        //_AllCheckMessagesWebElement.Select(
-        //        //element => new Checkbox(element)).ToList();
+        public List<Checkbox> RetrieveAllCheckboxes()
+        {
+            List<Checkbox> resultList = new List<Checkbox>(_AllCheckMessagesWebElement.Select(
+            element => new Checkbox(element)).ToList());
 
-        //    return resultList;
-        //}
+            return resultList;
+        }
     }
 }

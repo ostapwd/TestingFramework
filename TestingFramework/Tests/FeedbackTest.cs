@@ -14,19 +14,6 @@ namespace TestingFramework.Tests
     [TestFixture]
     class FeedbackTest : BaseTest
     {
-        private LoginPage _loginPage;
-        private HomePage _homepage;
-        private MyEbayPage _myEbayPage;
-        private MesgEbayPage _mesgEbayPage;
-        private FeedbackFormPage _feedbackFormPage;
-
-        [OneTimeSetUp]
-        public void OpenLoginPage()
-        {
-            //StartPage.OpenLoginPage();
-            //_loginPage = new LoginPage();
-        }
-
         [Test]
         public void ReachFeedbackPageTest()
         {
@@ -40,19 +27,7 @@ namespace TestingFramework.Tests
            string currentUrl = Driver.Get().Url;
            Assert.AreEqual(expectedUrl, currentUrl);
         
-        }
-
-        [Test]
-        public void CheckAllMessagesWithMasterCheckboxTest()
-        {
-           var _mesgEbayPage = StartPage.OpenLoginPage()
-                  .Login(TestData.UserData.Login, TestData.UserData.Password)
-                  .OpenMyEbayPage()
-                  .OpenMessagesPage();
-            _mesgEbayPage.SelectAllChecked.Check();
-
-
-        }
+        }    
 
         [OneTimeTearDown]
         public void WaitBeforeClosing()

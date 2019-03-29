@@ -103,6 +103,7 @@
     <Compile Include="Pages\MyEbayPage.cs" />
     <Compile Include="TestData\UserData.cs" />
     <Compile Include="TestData\UserModel.cs" />
+    <Compile Include="Tests\CheckboxTest.cs" />
     <Compile Include="Tests\FeedbackTest.cs" />
     <Compile Include="Tests\SearchForDnDTest.cs" />
     <Compile Include="Tests\SearchTest .cs" />
